@@ -6,8 +6,6 @@ export default function Card({card}) {
     const botToken = `${process.env.REACT_APP_BOT_TOKEN}`;
     const chatId = `${window.Telegram.WebApp.initDataUnsafe.chat.id}`;
 
-    console.log(chatId);
-
     const message = `Id: ${msj.id}
     Name: ${msj.name}
     Image: ${msj.images.small}`

@@ -8,17 +8,19 @@ import SearchCardData from './Hooks/SearchCardData'
 
 import { useState, useEffect } from "react"
 
-const tele = window.Telegram.WebApp
-
 function App() {
   const [selectValue, setSelectValue] = useState('');
   const [inputValue, setInputValue] = useState('');
 
   const { data, isLoading, error, fetchData } = SearchCardData();
 
-  useEffect(() => {
-    tele.ready();
-  })
+  useEffect (() => {
+    const tg = window.Telegram.WebApp;
+
+    tg.ready();
+    console.log(tg.initData);
+
+  },[])
 
   const handleSearchClick = () => {
     fetchData(selectValue, inputValue);
