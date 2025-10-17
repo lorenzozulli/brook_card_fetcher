@@ -9,7 +9,7 @@ function Input({value, onChange}) {
       <input value={value} 
         onChange={onChange} 
         type='text' 
-        placeholder='Search the id...'
+        placeholder='Search the name of the card...'
         className='input'
         ></input>
     </div>
