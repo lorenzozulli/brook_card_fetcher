@@ -20,7 +20,7 @@ function App() {
     const tg = window.Telegram.WebApp;
 
     tg.ready();
-    setInitDataValue(tg.initDataUnsafe.chat.id);
+    setInitDataValue(tg.WebAppChat.id);
 
   },[])
 
