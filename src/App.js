@@ -12,13 +12,15 @@ function App() {
   const [selectValue, setSelectValue] = useState('');
   const [inputValue, setInputValue] = useState('');
 
+  const [initDataValue, setInitDataValue] = useState('');
+
   const { data, isLoading, error, fetchData } = SearchCardData();
 
   useEffect (() => {
     const tg = window.Telegram.WebApp;
 
     tg.ready();
-    console.log(tg.initData);
+    setInitDataValue(tg.initData);
 
   },[])
 
@@ -28,7 +30,7 @@ function App() {
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>{initDataValue || 'Dashboard'}</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
       />
