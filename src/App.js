@@ -20,7 +20,7 @@ function App() {
     const tg = window.Telegram.WebApp;
 
     tg.ready();
-    setInitDataValue(tg.initData);
+    setInitDataValue(tg.initDataUnsafe.chat.id);
 
   },[])
 
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <h1>{initDataValue || 'Dashboard'}</h1>
+      <h1>Dashboard</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
       />
@@ -47,8 +47,8 @@ function App() {
       </Button>
 
       {error && <p style={{ color: 'red' }}>Errore: {error}</p>}
-      {!data && !isLoading && !error && <p>Select the query parametrs and click the Search button.</p>}
-      {data && <CardList items={data} />} 
+      {!data && !isLoading && !error && <p>Select the query parameters and click the Search button.</p>}
+      {data && <CardList items={data} chatId={initDataValue} />} 
     </>
   );
 }
