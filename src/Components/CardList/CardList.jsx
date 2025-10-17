@@ -1,9 +1,9 @@
 import Card from '../Card/Card'
 
-export default function CardList({items, chatId}){
+export default function CardList({items}){
     return (
         <div>
-            {items.map((card) => <Card card={card} chatId={chatId}/>)}
+            {items.map((card) => <Card card={card}/>)}
         </div>
     )
 }

@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <h1>Dashboard</h1>
+      <h1>{initDataValue || Dashboard}</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
       />
@@ -48,7 +48,7 @@ function App() {
 
       {error && <p style={{ color: 'red' }}>Errore: {error}</p>}
       {!data && !isLoading && !error && <p>Select the query parameters and click the Search button.</p>}
-      {data && <CardList items={data} chatId={initDataValue} />} 
+      {data && <CardList items={data}/>} 
     </>
   );
 }
