@@ -7,7 +7,7 @@ export default function Card({card}) {
 
     const message = `<b>Id: ${msj.id}</b><br><b>Name:</b> ${msj.name}<br><b>Image:</b> ${msj.images.small}`
 
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`);
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=html`);
 
   };
   return (
