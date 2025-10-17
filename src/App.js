@@ -6,14 +6,19 @@ import Input from './Components/Input/Input'
 import Select from './Components/Select/Select'
 import SearchCardData from './Hooks/SearchCardData'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
+const tele = window.Telegram.WebApp
 
 function App() {
-
   const [selectValue, setSelectValue] = useState('');
   const [inputValue, setInputValue] = useState('');
 
   const { data, isLoading, error, fetchData } = SearchCardData();
+
+  useEffect(() => {
+    tele.ready();
+  })
 
   const handleSearchClick = () => {
     fetchData(selectValue, inputValue);
