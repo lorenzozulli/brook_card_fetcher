@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/brook_card_fetcher/static/css/main.435f6eec.css",
-    "main.js": "/brook_card_fetcher/static/js/main.988a8469.js",
+    "main.js": "/brook_card_fetcher/static/js/main.f0326556.js",
     "index.html": "/brook_card_fetcher/index.html",
     "main.435f6eec.css.map": "/brook_card_fetcher/static/css/main.435f6eec.css.map",
-    "main.988a8469.js.map": "/brook_card_fetcher/static/js/main.988a8469.js.map"
+    "main.f0326556.js.map": "/brook_card_fetcher/static/js/main.f0326556.js.map"
   },
   "entrypoints": [
     "static/css/main.435f6eec.css",
-    "static/js/main.988a8469.js"
+    "static/js/main.f0326556.js"
   ]
 }
