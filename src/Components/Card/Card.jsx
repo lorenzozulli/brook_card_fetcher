@@ -4,7 +4,6 @@ export default function Card({card, chatId}) {
   
   const sendMessage = async (msj, chatId) => {
     const botToken = `${process.env.REACT_APP_BOT_TOKEN}`;
-    const chatId = chatId;
 
     const message = `Id: ${msj.id}
     Name: ${msj.name}
