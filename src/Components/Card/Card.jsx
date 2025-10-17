@@ -5,9 +5,9 @@ export default function Card({card}) {
     const botToken = `${process.env.REACT_APP_BOT_TOKEN}`;
     const chatId = `${process.env.REACT_APP_CHAT_ID}`;
 
-    const message = `**ID: ${msj.id}**\n\n**NAME:** ${msj.name})`
+    const message = `<b>ID: ${msj.id}</b><br><b>NAME:</b> ${msj.name})`
 
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}&media=${msj.images.small}`);
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&url=${message}&media=${msj.images.small}&parse_mode=html`);
 
   };
   return (
