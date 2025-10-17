@@ -3,7 +3,7 @@ import './Card.css';
 export default function Card({card}) {
   const sendMessage = async (msj) => {
     const botToken = `${process.env.REACT_APP_BOT_TOKEN}`;
-    const chatId = message.chat.id;
+    const chatId = `${process.env.REACT_APP_CHAT_ID}`;
 
     const message = `Id: ${msj.id}
     Name: ${msj.name}
