@@ -1,7 +1,5 @@
-const { Telegraf }  = require('Telegraf');
- 
-const bot = new Telegraf(process.env.REACT_APP_BOT_TOKEN)
+import TelegramBot from 'node-telegram-bot-api';
 
-bot.search((ctx) => ctx.reply('test'))
+const bot = new TelegramBot(`${process.env.REACT_APP_BOT_TOKEN}`, {polling: false});
 
-bot.launch()
+bot.onText(/\/start/)
