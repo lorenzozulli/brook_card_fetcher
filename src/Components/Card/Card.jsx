@@ -10,7 +10,7 @@ export default function Card({card}) {
     Image: ${msj.images.small}`
 
     
-    if(chatId != '') await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=30&text=${message}`);
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=30&text=${message}`);
 
   };
   return (
