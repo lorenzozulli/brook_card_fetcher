@@ -16,7 +16,7 @@ function SearchCardData() {
     setData(null);
     
     try {
-        const res = await fetch(`https://apitcg/com/api/${selectValue}/cards?name=${inputValue}`, {
+        const res = await fetch(`https://apitcg.com/api/${selectValue}/cards?name=${inputValue}`, {
           headers: {
             "x-api-key" : `${process.env.REACT_APP_API_KEY}`
           }
