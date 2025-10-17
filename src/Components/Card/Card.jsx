@@ -10,7 +10,7 @@ export default function Card({card}) {
   };
   return (
     <div className='card'
-      onClick={() => {sendMessage(card.id)}}>
+      onClick={() => {sendMessage(card.images.small)}}>
         <h3 id='cardId'>{card.id}</h3>
         <img src={card.images.small} className='imageCard' alt=''></img>
     </div>
