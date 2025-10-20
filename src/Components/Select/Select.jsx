@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Select from './Select.css'
 import { useState } from "react"
 
 function Select({value, onChange}) {

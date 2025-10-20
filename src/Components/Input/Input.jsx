@@ -1,5 +1,6 @@
 import React from 'react'
 import Select from '../Select/Select'
+import Input from './Input.css'
 import { useState, useEffect } from "react"
 
 function Input({value, onChange}) {
