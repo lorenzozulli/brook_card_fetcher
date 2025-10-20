@@ -19,18 +19,20 @@ function App() {
   useEffect (() => {
     if (window.Telegram && window.Telegram.WebApp) {
       const WebApp = window.Telegram.WebApp;
+      let finalChatId = null;
 
       WebApp.ready(); 
 
       const initData = WebApp.InitDataUnsafe;
 
       if (initData.chat) {
-        setInitDataValue(initData.chat.id);
+        finalChatId = initData.chat.id;
       } else if (initData.user) {
-        setInitDataValue(initData.user.id);
+        finalChatId = initData.user.id;
       } else {
         console.error("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
       }
+      setInitDataValue(finalChatId)
     } else {
       console.error("API Telegram WebApp non trovata. Sei sicuro che l'app sia in esecuzione all'interno di Telegram?");
     }  
