@@ -20,7 +20,7 @@ function App() {
     const tg = window.Telegram;
 
     tg.ready();
-    setInitDataValue(tg.WebAppChat.id);
+    setInitDataValue(`${tg.WebAppChat.id}`);
 
   },[])
 
