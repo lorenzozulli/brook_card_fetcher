@@ -24,8 +24,8 @@ function App() {
 
       const initData = WebApp.initDataUnsafe;
 
-      if (initData.chat) {
-        setInitDataValue(initData.chat.id);
+      if (initData.user) {
+        setInitDataValue(initData.user.id);
       } else {
         console.error("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
       }
