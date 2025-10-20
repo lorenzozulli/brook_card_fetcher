@@ -42,17 +42,17 @@ function App() {
             } else if (userChatId) {
                 // Trovato l'ID Utente (usato come ID Chat Privata)
                 setChatId(userChatId);
-                setError("Oggetto 'chat' assente. Ho usato l'ID UTENTE come ID di fallback per la chat privata.");
+                console.error("Oggetto 'chat' assente. Ho usato l'ID UTENTE come ID di fallback per la chat privata.");
                 console.log("ID Chat Trovato (Privata/Fallback):", userChatId);
 
             } else {
                 // Nessun dato utile trovato (es. App avviata in modo anomalo o dati mancanti)
-                setError("Dati di inizializzazione Telegram incompleti. Impossibile trovare un ID valido.");
+                console.error("Dati di inizializzazione Telegram incompleti. Impossibile trovare un ID valido.");
             }
 
         } else {
             // App avviata al di fuori del contesto Telegram o API non caricata
-            setError("L'API Telegram WebApp non è disponibile.");
+            console.error("L'API Telegram WebApp non è disponibile.");
         }
     }, []); 
 
