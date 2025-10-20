@@ -17,7 +17,7 @@ function App() {
   const { data, isLoading, error, fetchData } = SearchCardData();
 
   useEffect (() => {
-    const tg = window.Telegram.WebApp;
+    const tg = window.Telegram;
 
     tg.ready();
     setInitDataValue(tg.WebAppChat.id);
