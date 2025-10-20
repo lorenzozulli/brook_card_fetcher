@@ -17,52 +17,36 @@ function App() {
   const { data, isLoading, error, fetchData } = SearchCardData();
 
  useEffect(() => {
-        // 1. PRIMO CHECK: Verifica se l'ambiente è il browser e l'API TWA è disponibile
         if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
-            
-            const WebApp = window.Telegram.WebApp;
-            WebApp.ready(); 
-            
-            // Usiamo una variabile temporanea per chiarezza
-            const initData = WebApp.initDataUnsafe;
+          const WebApp = window.Telegram.WebApp;
+          WebApp.ready();
 
-            // 2. LOGICA ROBUSTA CON OPTIONAL CHAINING
-            
-            // Tentiamo di prendere l'ID della CHAT (Gruppo/Canale)
-            const groupChatId = initData?.chat?.id; 
-            
-            // Tentiamo di prendere l'ID dell'UTENTE (Fallback per Chat Privata)
-            const userChatId = initData?.user?.id;
-            
-            if (groupChatId) {
-                // Trovato l'ID del Gruppo/Canale (ID negativo)
-                setChatId(groupChatId);
-                console.log("ID Chat Trovato (Gruppo/Canale):", groupChatId);
-
-            } else if (userChatId) {
-                // Trovato l'ID Utente (usato come ID Chat Privata)
-                setChatId(userChatId);
-                console.error("Oggetto 'chat' assente. Ho usato l'ID UTENTE come ID di fallback per la chat privata.");
-                console.log("ID Chat Trovato (Privata/Fallback):", userChatId);
-
-            } else {
-                // Nessun dato utile trovato (es. App avviata in modo anomalo o dati mancanti)
-                console.error("Dati di inizializzazione Telegram incompleti. Impossibile trovare un ID valido.");
-            }
-
+          const initData = WebApp.initDataUnsafe;
+          const groupChatId = initData?.chat?.id; 
+          const userChatId = initData?.user?.id;
+          
+          if (groupChatId) {
+            setChatId(groupChatId);
+            console.log("ID Chat Trovato (Gruppo/Canale):", groupChatId);
+          } else if (userChatId) {
+            setChatId(userChatId);
+            console.error("Oggetto 'chat' assente. Ho usato l'ID UTENTE come ID di fallback per la chat privata.");
+            console.log("ID Chat Trovato (Privata/Fallback):", userChatId);
+          } else {
+            console.error("Dati di inizializzazione Telegram incompleti. Impossibile trovare un ID valido.");
+          }
         } else {
-            // App avviata al di fuori del contesto Telegram o API non caricata
-            console.error("L'API Telegram WebApp non è disponibile.");
+          console.error("L'API Telegram WebApp non è disponibile.");
         }
-    }, []); 
-
+    }, []);
+    
   const handleSearchClick = () => {
     fetchData(selectValue, inputValue);
   };
 
   return (
     <div className='main_screen'>
-      <h1>{initDataValue}</h1>
+      <h1>Dashboard</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
       />
