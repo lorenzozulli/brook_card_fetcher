@@ -17,10 +17,21 @@ function App() {
   const { data, isLoading, error, fetchData } = SearchCardData();
 
   useEffect (() => {
-    const tg = window.Telegram.WebApp;
+    if (window.Telegram && window.Telegram.WebApp) {
+      const WebApp = window.Telegram.WebApp;
 
-    tg.ready();
-    setInitDataValue(`${tg.WebAppChat.id}`);
+      WebApp.ready(); 
+
+      const initData = WebApp.initDataUnsafe;
+
+      if (initData.chat) {
+        setInitDataValue(initData.chat.id);
+      } else {
+        setError("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
+      }
+    } else {
+      setError("API Telegram WebApp non trovata. Sei sicuro che l'app sia in esecuzione all'interno di Telegram?");
+    }  
   },[])
 
   const handleSearchClick = () => {
