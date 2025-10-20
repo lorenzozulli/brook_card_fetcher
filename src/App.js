@@ -22,10 +22,10 @@ function App() {
 
       WebApp.ready(); 
 
-      const initData = WebApp.WebAppChat;
+      const initData = WebApp.initDataUnsafe;
 
-      if (initData.id) {
-        setInitDataValue(initData.id);
+      if (initData.chat.id) {
+        setInitDataValue(initData.chat.id);
       } else {
         console.error("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
       }
