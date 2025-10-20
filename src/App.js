@@ -27,10 +27,10 @@ function App() {
       if (initData.chat) {
         setInitDataValue(initData.chat.id);
       } else {
-        setError("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
+        console.error("Oggetto 'chat' non trovato. Probabilmente la TWA è stata avviata da una chat privata senza contesto o non ha i permessi.");
       }
     } else {
-      setError("API Telegram WebApp non trovata. Sei sicuro che l'app sia in esecuzione all'interno di Telegram?");
+      console.error("API Telegram WebApp non trovata. Sei sicuro che l'app sia in esecuzione all'interno di Telegram?");
     }  
   },[])
 
