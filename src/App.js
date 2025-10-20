@@ -58,7 +58,7 @@ function App() {
 
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {!data && !isLoading && !error && <p>Select the query parameters and click the Search button.</p>}
-      {data && <CardList items={data}/>} 
+      {data && <CardList items={data} chatId={initDataValue}/>} 
     </div>
   );
 }
