@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className='main_screen'>
-      <h1>Dashboard</h1>
+      <h1>{initDataValue || Dashboard}</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
       />
