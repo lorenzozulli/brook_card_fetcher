@@ -16,13 +16,12 @@ function App() {
 
   const { data, isLoading, error, fetchData } = SearchCardData();
 
-  // useEffect (() => {
-  //   const tg = window.Telegram;
+  useEffect (() => {
+    const tg = window.Telegram.WebApp;
 
-  //   tg.ready();
-  //   setInitDataValue(`${tg.WebAppChat.id}`);
-
-  // },[])
+    tg.ready();
+    setInitDataValue(`${tg.WebAppChat.id}`);
+  },[])
 
   const handleSearchClick = () => {
     fetchData(selectValue, inputValue);
