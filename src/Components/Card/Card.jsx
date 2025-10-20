@@ -5,12 +5,9 @@ export default function Card({card, chatId}) {
   const sendMessage = async (msj, chatId) => {
     const botToken = `${process.env.REACT_APP_BOT_TOKEN}`;
 
-    const message = `Id: ${msj.id}
-    Name: ${msj.name}
-    Image: ${msj.images.small}`
-
+    const message = `*Name:* ${msj.name} \ *Id:* ${msj.id} \ *Image URL:* ${msj.images.large}`
     
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`);
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}&parse_mode=MarkdownV2`);
 
   };
   return (
