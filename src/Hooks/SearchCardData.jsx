@@ -25,7 +25,7 @@ function SearchCardData() {
         console.log(response.data)
         setData(response.data)
       } catch (error) {
-       console.error("ERRORE DI CONNESSIONE AL PROXY ESTERNO:", error.stack); 
+       alert("ERROR", error.stack); 
       }
     }
     return { data, fetchData };

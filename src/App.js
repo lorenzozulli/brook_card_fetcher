@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className='main_screen'>
       <h1>{initDataValue || 'Dashboard'}</h1>
       <Select selectValue={selectValue}
         onChange={(e)=>setSelectValue(e.target.value)} 
@@ -43,13 +43,13 @@ function App() {
         onClick={handleSearchClick} 
         disabled={isLoading || !selectValue || !inputValue}
       >
-        {isLoading ? 'Caricamento...' : 'Cerca Dati'}
+        {isLoading ? 'Loading...' : 'Search'}
       </Button>
 
-      {error && <p style={{ color: 'red' }}>Errore: {error}</p>}
+      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       {!data && !isLoading && !error && <p>Select the query parameters and click the Search button.</p>}
       {data && <CardList items={data}/>} 
-    </>
+    </div>
   );
 }
 
