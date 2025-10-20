@@ -22,7 +22,7 @@ function App() {
 
       WebApp.ready(); 
 
-      const initData = WebApp.initDataUnsafe;
+      const initData = WebApp.WebAppInitData;
 
       if (initData.chat.id) {
         setInitDataValue(initData.chat.id);
