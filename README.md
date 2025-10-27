@@ -10,7 +10,7 @@
 1. ...
 
 ### 💻 Installation
-1. Search @BrookCardFetcher in telegram
+1. [Open the following link](https://t.me/BrookCardFetcherBot)
 2. Open the web app in the bottom left corner
 
 ### 🔗 Tecnologies
