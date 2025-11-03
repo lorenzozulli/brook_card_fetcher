@@ -1,4 +1,4 @@
-.card{
+.card {
     display: flex;
     justify-content: flex-start;
     height: 100%;
@@ -8,11 +8,12 @@
     padding: 20px;
     box-shadow: 0px 0 3px 1px #f0f0f0;
     margin: 10px;
-    border-radius: 1px
+    border-radius: 1px;
 }
 
 .imageCard {
     display: flex;
+    height: 100%;
     width: auto;
     max-width: 100px;
 }

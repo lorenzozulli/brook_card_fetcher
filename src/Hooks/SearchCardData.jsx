@@ -7,7 +7,7 @@ function SearchCardData() {
   const [error, setError] = useState(null); 
     const fetchData = async (selectValue, inputValue) => {
       if (!selectValue || !inputValue) {
-        setError("Seleziona un'opzione e inserisci un valore.");
+        setError("Select an option and insert a card name");
         return;
       }
 
