@@ -28,7 +28,7 @@ function SearchCardData() {
        alert("ERROR", error.stack); 
       }
     }
-    return { data, fetchData };
+    return { data, isLoading, error, fetchData };
 }
 
 export default SearchCardData

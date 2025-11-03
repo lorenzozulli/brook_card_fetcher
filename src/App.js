@@ -27,16 +27,16 @@ function App() {
           
           if (groupChatId) {
             setChatId(groupChatId);
-            console.log("ID Chat Trovato (Gruppo/Canale):", groupChatId);
+            console.log("chatId found: ", groupChatId);
           } else if (userChatId) {
             setChatId(userChatId);
-            console.error("Oggetto 'chat' assente. Ho usato l'ID UTENTE come ID di fallback per la chat privata.");
-            console.log("ID Chat Trovato (Privata/Fallback):", userChatId);
+            console.error("chat is missing.");
+            console.log("chatId found (Private/Fallback):", userChatId);
           } else {
-            console.error("Dati di inizializzazione Telegram incompleti. Impossibile trovare un ID valido.");
+            console.error("Telegram data found, initializing...");
           }
         } else {
-          console.error("L'API Telegram WebApp non è disponibile.");
+          console.error("Telegram WebApp API not usable.");
         }
     }, []);
     
