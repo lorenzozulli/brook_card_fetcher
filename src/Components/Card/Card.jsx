@@ -15,7 +15,7 @@ export default function Card({card, chatId}) {
       onClick={() => {sendMessage(card, chatId)}}>
         <img src={card.images.small} className='imageCard' alt=''></img>
         <div className='details'>
-          <h3 id='cardName'>{card.name}</h3>
+          <h1 id='cardName'>{card.name}</h1>
           <p id='cardId'>{card.id}</p>
         </div>
     </div>
