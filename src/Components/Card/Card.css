@@ -1,19 +1,25 @@
 .card{
-    padding: .6rem .8rem;
-    font-size: 1.2rem;
-    text-align: center;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    width: auto;
-    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 360px;
+    max-width: 360px;
+    background-color: #808080;
+    padding: 20px;
+    box-shadow: 0px 0 3px 1px #f0f0f0;
     margin: 10px;
-    box-shadow: 1px -3px 52px -5px rgba(0, 0, 0, .77);
-    cursor: pointer;
+    border-radius: 1px
 }
 
-.imageCard{
+.imageCard {
     display: flex;
     width: auto;
-    max-width: 50px;
+    max-width: 100px;
+}
+
+.details {
+    display: flex;
+    width: auto;
+    max-width: fit-content;
+
 }
